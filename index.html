@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC Builder — Comparador de Componentes Gamer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav-logo">PC Builder</a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#comparar">Comparar</a></li>
+        <li><a href="#guia">Guía</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+      <div class="container hero-contenido">
+        <span class="hero-badge">Comparador de PC gamer</span>
+        <h1>Armá tu PC ideal</h1>
+        <p class="hero-subtitulo">
+          Explorá procesadores, tarjetas de video, memorias RAM, placas madre y
+          almacenamiento. Compará componentes para armar el equipo gamer perfecto.
+        </p>
+        <div class="hero-botones">
+          <a class="btn btn-primario" href="#catalogo">Explorar catálogo</a>
+          <a class="btn btn-secundario" href="#como-funciona">Cómo funciona</a>
+        </div>
+      </div>
+      <div class="container hero-imagen">
+        <img src="https://placehold.co/900x560?text=PC+Gamer" alt="Computadora gamer de escritorio">
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section id="como-funciona" class="seccion">
+      <div class="container">
+        <h2>Cómo funciona el comparador</h2>
+        <p class="seccion-descripcion">
+          Conocer, explorar y comparar es el primer paso para armar una PC gamer.
+        </p>
+        <div class="grid-pasos">
+          <article class="paso">
+            <span class="paso-numero">1</span>
+            <h3>Elegí componentes</h3>
+            <p>Explorá el catálogo y elegí hasta dos componentes que quieras comparar.</p>
+          </article>
+          <article class="paso">
+            <span class="paso-numero">2</span>
+            <h3>Compará</h3>
+            <p>Revisá las especificaciones de ambos componentes una al lado de la otra.</p>
+          </article>
+          <article class="paso">
+            <span class="paso-numero">3</span>
+            <h3>Armá tu build</h3>
+            <p>Combiná lo que mejor se adapte a tu presupuesto y rendimiento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categorias -->
+    <section id="categorias" class="seccion seccion-oscura">
+      <div class="container">
+        <h2>Categorías de componentes</h2>
+        <p class="seccion-descripcion">
+          Hacé clic en una categoría para filtrar el catálogo y ver sus componentes.
+        </p>
+        <div id="categorias-grid" class="grid-categorias">
+          <button type="button" class="tarjeta-categoria" data-categoria="cpu">
+            <span class="tarjeta-categoria-icono">CPU</span>
+            <span class="tarjeta-categoria-nombre">Procesadores</span>
+            <span class="tarjeta-categoria-desc">Rendimiento central para gaming y creación.</span>
+          </button>
+          <button type="button" class="tarjeta-categoria" data-categoria="gpu">
+            <span class="tarjeta-categoria-icono">GPU</span>
+            <span class="tarjeta-categoria-nombre">Tarjetas de video</span>
+            <span class="tarjeta-categoria-desc">Gráficos para jugar a altas resoluciones.</span>
+          </button>
+          <button type="button" class="tarjeta-categoria" data-categoria="ram">
+            <span class="tarjeta-categoria-icono">RAM</span>
+            <span class="tarjeta-categoria-nombre">Memorias RAM</span>
+            <span class="tarjeta-categoria-desc">Memoria de trabajo rápida y fluida.</span>
+          </button>
+          <button type="button" class="tarjeta-categoria" data-categoria="motherboard">
+            <span class="tarjeta-categoria-icono">MB</span>
+            <span class="tarjeta-categoria-nombre">Placas madre</span>
+            <span class="tarjeta-categoria-desc">El cerebro que conecta todos los componentes.</span>
+          </button>
+          <button type="button" class="tarjeta-categoria" data-categoria="storage">
+            <span class="tarjeta-categoria-icono">SSD</span>
+            <span class="tarjeta-categoria-nombre">Almacenamiento</span>
+            <span class="tarjeta-categoria-desc">Disco veloz para guardar tus datos.</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalogo -->
+    <section id="catalogo" class="seccion">
+      <div class="container">
+        <h2>Catálogo de componentes</h2>
+        <p class="seccion-descripcion">
+          Explorá procesadores, tarjetas de video, memorias RAM, placas madre y
+          almacenamiento. Todos los precios son <strong>ejemplos ficticios en pesos
+          argentinos</strong> y el catálogo es demostrativo.
+        </p>
+
+        <div class="controles">
+          <input type="search" id="busqueda" class="input-busqueda" placeholder="Buscar componente o marca..." aria-label="Buscar componente">
+          <select id="ordenar" class="input-ordenar" aria-label="Ordenar por precio">
+            <option value="default">Ordenar: Relevancia</option>
+            <option value="asc">Precio: menor a mayor</option>
+            <option value="desc">Precio: mayor a menor</option>
+          </select>
+          <button type="button" id="btn-limpiar-filtros" class="btn btn-secundario">Limpiar filtros</button>
+          <div id="filtros" class="filtros" role="group" aria-label="Filtrar por categoria">
+            <button type="button" class="chip activo" data-categoria="todos">Todos</button>
+            <button type="button" class="chip" data-categoria="cpu">Procesadores</button>
+            <button type="button" class="chip" data-categoria="gpu">Tarjetas de video</button>
+            <button type="button" class="chip" data-categoria="ram">Memorias RAM</button>
+            <button type="button" class="chip" data-categoria="motherboard">Placas madre</button>
+            <button type="button" class="chip" data-categoria="storage">Almacenamiento</button>
+          </div>
+        </div>
+
+        <div id="catalogo-grid" class="grid-tarjetas"></div>
+        <p id="mensaje-sin-resultados" class="mensaje">No se encontraron componentes. Probá con otro nombre, marca o cambiá el filtro.</p>
+      </div>
+    </section>
+
+    <!-- Destacados -->
+    <section id="destacados" class="seccion seccion-oscura">
+      <div class="container">
+        <h2>Componentes destacados</h2>
+        <p class="seccion-descripcion">
+          Una selección de componentes populares para armar tu PC gamer ideal.
+        </p>
+        <div id="destacados-grid" class="grid-tarjetas"></div>
+      </div>
+    </section>
+
+    <!-- Comparador -->
+    <section id="comparar" class="seccion">
+      <div class="container">
+        <h2>Comparar componentes</h2>
+        <p id="mensaje-comparacion" class="mensaje">Seleccioná dos componentes del catálogo para ver la comparación de sus características.</p>
+        <div id="contenedor-tabla" class="oculto">
+          <div class="comparacion-contenido">
+            <table class="tabla-comparacion" id="tabla-comparacion">
+              <thead>
+                <tr>
+                  <th>Característica</th>
+                  <th id="columna-1"></th>
+                  <th id="columna-2"></th>
+                </tr>
+              </thead>
+              <tbody id="tabla-comparacion-body"></tbody>
+            </table>
+            <button type="button" id="btn-limpiar" class="btn btn-secundario">Limpiar comparación</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guia -->
+    <section id="guia" class="seccion">
+      <div class="container">
+        <h2>Guía de componentes</h2>
+        <p class="seccion-descripcion">
+          Explicaciones sencillas para entender qué hace cada componente y por qué la
+          compatibilidad importa.
+        </p>
+        <div class="grid-guia">
+          <article class="guia-card">
+            <h3>¿Qué es el procesador (CPU)?</h3>
+            <p>Es el cerebro de la computadora. Calcula y ejecuta instrucciones para el sistema operativo y los programas.</p>
+          </article>
+          <article class="guia-card">
+            <h3>¿Qué es la placa de video (GPU)?</h3>
+            <p>Genera las imágenes que ves. Es clave para juegos, renderizado 3D y edición de video.</p>
+          </article>
+          <article class="guia-card">
+            <h3>¿Qué es la memoria RAM?</h3>
+            <p>Es la memoria de trabajo temporal. Al cerrar programas libera espacio para los que viene.</p>
+          </article>
+          <article class="guia-card">
+            <h3>¿Para qué sirve la placa madre?</h3>
+            <p>Conecta CPU, RAM, GPU, SSD y otros componentes. Define compatibilidades clave.</p>
+          </article>
+          <article class="guia-card">
+            <h3>SSD SATA vs NVMe</h3>
+            <p>El SATA III alcanza ~550 MB/s, mientras que el NVMe usa PCIe y llega a varios miles de MB/s.</p>
+          </article>
+          <article class="guia-card">
+            <h3>Características clave</h3>
+            <p>GHz es la frecuencia, GB la capacidad, VRAM la memoria de la GPU y PCIe la interfaz de conexión.</p>
+          </article>
+          <article class="guia-card">
+            <h3>Compatibilidad</h3>
+            <p>Socket, chipset, tipo de RAM y TDP deben ser compatibles entre componentes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por que comparar -->
+    <section id="por-que-comparar" class="seccion seccion-oscura">
+      <div class="container">
+        <h2>¿Por qué comparar antes de comprar?</h2>
+        <p class="seccion-descripcion">
+          Comparar especificaciones antes de comprar ayuda a tomar decisiones más
+          acertadas y a evitar errores comunes al armar una PC.
+        </p>
+        <div class="grid-por-que">
+          <article class="por-que-card">
+            <h3>Evitá sobredimensionar</h3>
+            <p>No gastes en componentes más potentes de los que necesitás.</p>
+          </article>
+          <article class="por-que-card">
+            <h3>Evitá subdimensionar</h3>
+            <p>No elegís componentes que no alcanzan el rendimiento que buscás.</p>
+          </article>
+          <article class="por-que-card">
+            <h3>Mejor experiencia</h3>
+            <p>Armá una PC equilibrada y preparada para el gaming y la creación.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>PC Builder — Proyecto académico. Los componentes y precios mostrados son ficticios.</p>
+      <ul class="footer-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#comparar">Comparar</a></li>
+        <li><a href="#guia">Guía</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
